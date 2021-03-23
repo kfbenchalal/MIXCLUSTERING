@@ -1,0 +1,70 @@
+
+---
+# title: "MIXCLUSTERING_vignette"
+# output: rmarkdown::html_vignette
+# vignette: >
+#   %\VignetteIndexEntry{vignette}
+#   %\VignetteEngine{knitr::rmarkdown}
+#   %\VignetteEncoding{UTF-8}
+
+title: "Mixed Data Clustering using Mixture Model documentation"
+author: "Nour Dass HAMMADI &  Farida BENCHALLAL"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{MIXCLUSTERING_Vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+Clustering Method with mixture model using EM algorithm for mixed data ( categorical features
+and continious features), the package has two functions: MclustBis() for clustering and plotting for
+displaying results
+
+```{r}
+library(dplyr)
+library(tidyverse)
+library(gtools)
+library(FactoMineR)
+library(bayess)
+library(mvtnorm)
+library(devtools)
+library(MIXCLUSTERING)
+
+
+```
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+### préparation de données
+```{r, include = TRUE}
+
+x <- mtcars 
+x$vs = as.factor(x$vs) 
+x$am = as.factor(x$am) 
+x$gear = as.factor(x$gear) 
+```
+
+##MIXCLUSTERING
+```{r, include = TRUE}
+mix_clust_kmeans <- My_Mix_clustering(x, 3, 14, 'kmeans')
+mix_clust_random <- My_Mix_clustering(x, 3, 14, 'random')
+```
+
+
+##Graphes MIXCLUSTERING
+
+
+
+```{r, include = TRUE}
+affiche_graphe(mix_clust_kmeans)
+affiche_graphe(mix_clust_random)
+```
+
+
+

@@ -1,0 +1,14 @@
+Package: MIXCLUSTERING
+Type: Package
+Title: MIXCLUSTERING
+Version: 0.1.0
+Author: Nour-Dass HAMMADI & Farida BENCHENLAL
+Maintainer: Nour-Dass HAMMADI<nour-dass.hammadi@univ-lyon2.fr>
+Description: Clustering Method with mixture model using EM algorithm for mixed data ( categorical features and continious features), the package has two functions: MIXCLUSTERING() for clustering and plotting for displaying results.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1
+NeedsCompilation: no
+Packaged: 2021-03-15 14:40:53 UTC; nour0
+Depends: R (>= 3.5.0)
